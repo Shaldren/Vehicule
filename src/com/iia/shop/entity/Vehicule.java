@@ -1,21 +1,19 @@
 package com.iia.shop.entity;
 
-import java.io.Serializable;
+public class Vehicule {
+	private int id;
+	private String marque;
+	private int year;
+	private int speed;
+	private String model;
+	private String color;
+	private double price;
 
-public class Vehicule implements Serializable{
-	protected String marque;
-	protected int year;
-	protected int speed;
-	protected String model;
-	protected String color;
-	protected double price;
+	
 
-	public Vehicule() {
+	public Vehicule(int id, String marque, int year, int speed, String model, String color, double price) {
 		super();
-	}
-
-	public Vehicule(String marque, int year, int speed, String model, String color, double price) {
-		super();
+		this.id = id;
 		this.marque = marque;
 		this.year = year;
 		this.speed = speed;
@@ -24,6 +22,22 @@ public class Vehicule implements Serializable{
 		this.price = price;
 	}
 
+	public Vehicule(String marque, int year, int speed, String model, String color, double price) {
+		this(-1,marque,year,speed,model,color,price);
+	}
+	
+	
+	public Vehicule() {
+
+	}
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getMarque() {
 		return marque;
 	}
